@@ -46,4 +46,15 @@ contract SubscriptionPlatform {
     function withdraw() public onlyOwner {
         payable(owner).transfer(address(this).balance);
     }
+
+    // ✅ New function to check remaining days in subscription
+    function checkRemainingDays() public view returns (uint256) {
+        if (subscribers[msg.sender] < block.timestamp) {
+            return 0;
+        } else {
+            return (subscribers[msg.sender] - block.timestamp) / 1 days;
+        }
+    }
 }
+
+ ✅ Added one function suggested by ChatGPT
