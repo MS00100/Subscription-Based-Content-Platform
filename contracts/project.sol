@@ -58,3 +58,5 @@ contract SubscriptionPlatform {
 }
 
  ✅ Added one function suggested by ChatGPT
+ ✅ Updated
+
